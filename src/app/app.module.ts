@@ -6,13 +6,20 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CombatPageComponent } from './combat-page/combat-page.component';
+import { AttackComponent } from './attack/attack.component';
+import { AttackModifierComponent } from './attack-modifier/attack-modifier.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CombatPageComponent,
+    AttackComponent,
+    AttackModifierComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
