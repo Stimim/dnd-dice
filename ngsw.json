@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1603816465269,
+  "timestamp": 1603889853267,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -28,6 +28,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/icons/icon-d20-144.png",
         "/assets/icons/icon-d20.svg"
       ],
       "patterns": []
@@ -35,10 +36,11 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/assets/icons/icon-d20-144.png": "cb9b684069963211e037aaa3a5a8bea597553ff1",
     "/assets/icons/icon-d20.svg": "87d38e8eef85cb855e7b30c1a0b41cd55d1a8bbc",
     "/index.html": "1eb1b8adc4810c8bfa762ef48611d5b1d1dcac59",
     "/main.3c0a972d9eaa589267d2.js": "70d6e4381f1f5d1213cecd832ab525d0ebab370f",
-    "/manifest.webmanifest": "053d8a5d22e7fe6e0c70d5980a2f4fcd7c9156ea",
+    "/manifest.webmanifest": "a83064675f480f32e1bb3127c34a4323470ca991",
     "/polyfills.35a5ca1855eb057f016a.js": "578360d24ce37383f261c7ef63b1f822d28e8dde",
     "/runtime.acf0dec4155e77772545.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/styles.4154e53e924fd7329071.css": "f7b7e3bc5642549f6800a23a347f16f75ae511ea"

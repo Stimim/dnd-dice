@@ -12,6 +12,12 @@
       "sizes": "any",
       "type": "image/svg",
       "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-d20-144.png",
+      "sizes": "144",
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ]
 }
