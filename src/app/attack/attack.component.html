@@ -1,15 +1,57 @@
-<div>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Header</mat-card-title>
-    </mat-card-header>
-  </mat-card>
-  <mat-card-content>
-    <label>Attack</label> <input type="text" placeholder="+0" /><br>
-    <label>Damage</label> <input type="text" placeholder="1d4" /><br>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>Attack</button>
-    <button mat-button>Delete</button>
-  </mat-card-actions>
-</div>
+<mat-expansion-panel
+  class="attack-component"
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false" >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{attack.name || "NoName"}}
+    </mat-panel-title>
+    <mat-panel-description *ngIf="!panelOpenState" >
+        <button mat-icon-button (click)="onDiceClicked()" color="primary">
+          <mat-icon>casino</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteClicked()" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+    </mat-panel-description>
+
+  </mat-expansion-panel-header>
+  <mat-action-row>
+      <div class="button-row">
+        <button mat-icon-button (click)="onDiceClicked()" color="primary">
+          <mat-icon>casino</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteClicked()" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+  </mat-action-row>
+  <div>
+    <div *ngIf="panelOpenState">
+      <mat-form-field style="width: 100%;" appearance="fill">
+        <mat-label>Attack Name</mat-label>
+        <input matInput placeholder="NoName"
+                        [(ngModel)]="attack.name"
+                        />
+      </mat-form-field><br>
+    </div>
+    <mat-form-field style="width: 100%;" appearance="fill">
+      <mat-label>Attack Bonus</mat-label>
+      <input matInput placeholder="+0" />
+    </mat-form-field><br>
+
+    <mat-form-field style="width: 100%;" appearance="fill">
+      <mat-label>Damage</mat-label>
+      <input matInput placeholder="1d4" />
+    </mat-form-field><br>
+
+    <mat-form-field style="width: 48%;" appearance="fill">
+      <mat-label>Crit. Threshold</mat-label>
+      <input matInput placeholder="20" />
+    </mat-form-field>
+    <mat-form-field style="width: 48%;" appearance="fill">
+      <mat-label>Crit. Multiplier</mat-label>
+      <input matInput placeholder="2" />
+    </mat-form-field><br>
+  </div>
+</mat-expansion-panel>

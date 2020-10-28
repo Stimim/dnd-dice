@@ -1,0 +1,12 @@
+.attack-component {
+}
+
+.attack-component .mat-expansion-panel-header-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.attack-component .mat-form-field + .mat-form-field {
+  margin-left: min(8px, 1vw);
+}
