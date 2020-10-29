@@ -7,6 +7,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,13 +18,17 @@ import { environment } from '../environments/environment';
 import { CombatPageComponent } from './combat-page/combat-page.component';
 import { AttackComponent } from './attack/attack.component';
 import { AttackModifierComponent } from './attack-modifier/attack-modifier.component';
+import { SkillsPageComponent } from './skills-page/skills-page.component';
+import { DicePageComponent } from './dice-page/dice-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CombatPageComponent,
     AttackComponent,
-    AttackModifierComponent
+    AttackModifierComponent,
+    SkillsPageComponent,
+    DicePageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { AttackModifierComponent } from './attack-modifier/attack-modifier.compo
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
     MatToolbarModule,
   ],
   providers: [],
