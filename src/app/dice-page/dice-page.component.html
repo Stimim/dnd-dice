@@ -1,1 +1,14 @@
-<p>dice-page works!</p>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Dice Expression</mat-label>
+      <input matInput placeholder="1d8+3" #userInput />
+    </mat-form-field>
+    <button mat-stroked-button (click)="addExpr(userInput.value)" >=</button><br>
+
+    <mat-nav-list>
+      <mat-list-item
+        *ngFor="let entry of results; index as i"
+        (click)="retry(i)">
+          {{ entry.exprObject }} = {{ entry.result }} = {{ entry.sum }}
+      </mat-list-item>
+    </mat-nav-list>
