@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -29,7 +29,7 @@ import { DicePageComponent } from './dice-page/dice-page.component';
     AttackComponent,
     AttackModifierComponent,
     SkillsPageComponent,
-    DicePageComponent
+    DicePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,7 @@ import { DicePageComponent } from './dice-page/dice-page.component';
     MatListModule,
     MatMenuModule,
     MatToolbarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

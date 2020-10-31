@@ -1,4 +1,16 @@
 <app-attack
   *ngFor="let attack of attacks"
-  [attack]="attack">
+  [attack]="attack"
+  (deleteRequest)="deleteAttack($event)" >
 </app-attack>
+
+<button mat-fab
+        class="button-add"
+        color="primary"
+        [matMenuTriggerFor]="menu">
+  <mat-icon>add</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="addAttack()" >Attack</button>
+  <button mat-menu-item>Modifier</button>
+</mat-menu>

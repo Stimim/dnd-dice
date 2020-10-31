@@ -9,13 +9,25 @@ import { Attack } from '../data-type/attack';
 })
 export class CombatPageComponent implements OnInit {
 
-  attacks : Attack[] = [
-    {}
-  ];
+  attacks : Attack[] = [ ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  deleteAttack(attack: Attack) {
+    this.attacks = this.attacks.filter(x => x.id !== attack.id);
+  }
+
+  rollATtack(attack: Attack) {
+
+  }
+
+  addAttack() {
+    // let's use current time (ms since epoch) as uuid.
+    this.attacks.push(
+      {id: (new Date()).getTime()}
+    );
+  }
 }
