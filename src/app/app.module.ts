@@ -21,6 +21,7 @@ import { AttackComponent } from './attack/attack.component';
 import { AttackModifierComponent } from './attack-modifier/attack-modifier.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { DicePageComponent } from './dice-page/dice-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DicePageComponent } from './dice-page/dice-page.component';
     AttackModifierComponent,
     SkillsPageComponent,
     DicePageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

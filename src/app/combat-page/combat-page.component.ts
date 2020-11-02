@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Attack } from '../data-type/attack';
+import { ProfileService } from '../profile.service';
+import { Attack, AttackModifier } from '../data-type/attack';
 
 @Component({
   selector: 'app-combat-page',
@@ -9,11 +10,15 @@ import { Attack } from '../data-type/attack';
 })
 export class CombatPageComponent implements OnInit {
 
-  attacks : Attack[] = [ ];
+  attacks!: Attack[];
+  attackModifiers!: AttackModifier[];
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    const profile = this.profileService.getActiveProfile();
+    this.attacks = profile.attacks;
+    this.attackModifiers = profile.attackModifiers;
   }
 
   deleteAttack(attack: Attack) {

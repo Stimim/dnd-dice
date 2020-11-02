@@ -1,0 +1,19 @@
+<div class="profile-page">
+  <form class="profile-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Profile Name</mat-label>
+      <input #profileId matInput
+        value="{{ this.activeProfile.id }}"
+        />
+      <button mat-icon matSuffix color="primary" (click)="saveProfile(profileId.value)">
+        <mat-icon>save</mat-icon>
+      </button>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="outline" class="profile-content">
+      <mat-label>Content</mat-label>
+      <textarea matInput readonly rows=25>{{ this.activeProfile | json }}</textarea>
+    </mat-form-field>
+  </form>
+</div>
