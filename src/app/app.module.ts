@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -48,6 +49,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     MatListModule,
     MatMenuModule,
     MatToolbarModule,
+    MatTooltipModule,
     ReactiveFormsModule,
   ],
   providers: [],

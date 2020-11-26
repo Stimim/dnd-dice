@@ -10,6 +10,6 @@ cat >src/environments/version.ts <<__EOF__
 export const VERSION = {
   version: "${version}",
   commit: "${commit}",
-  timestamp: "${timestamp}",
+  timestamp: ${timestamp},
 };
 __EOF__
