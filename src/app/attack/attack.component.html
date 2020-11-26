@@ -27,34 +27,34 @@
       </div>
   </mat-action-row>
   <form [formGroup]="attackForm">
-    <mat-form-field style="width: 100%;" appearance="fill">
+    <mat-form-field style="width: 100%;" appearance="outline">
       <mat-label>Attack Name</mat-label>
       <input matInput
              placeholder="NoName"
              formControlName="name" />
     </mat-form-field><br>
-    <mat-form-field style="width: 100%;" appearance="fill">
+    <mat-form-field style="width: 100%;" appearance="outline">
       <mat-label>Attack Bonus</mat-label>
       <input matInput
              placeholder="+0"
              formControlName="attack" />
     </mat-form-field><br>
 
-    <mat-form-field style="width: 100%;" appearance="fill">
+    <mat-form-field style="width: 100%;" appearance="outline">
       <mat-label>Damage</mat-label>
       <input matInput
              placeholder="1d4"
              formControlName="damage" />
     </mat-form-field><br>
 
-    <mat-form-field style="width: 48%;" appearance="fill">
+    <mat-form-field style="width: 48%;" appearance="outline">
       <mat-label>Crit. Threshold</mat-label>
       <input matInput
              class="form-control"
              placeholder="20"
              formControlName="crit_threshold" />
     </mat-form-field>
-    <mat-form-field style="width: 48%;" appearance="fill">
+    <mat-form-field style="width: 48%;" appearance="outline">
       <mat-label>Crit. Multiplier</mat-label>
       <input matInput
              placeholder="2"
