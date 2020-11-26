@@ -9,18 +9,18 @@ export interface Attack {
   // Example: 1d8 + 1 + 2 + 3
   damage?: string;
   // It will be a critical hit if `d20 >= critical_threshold`.
-  crit_threshold?: string;
+  critThreshold?: string;
   // Multiplier to be applied on critical hit.
   // crit_damage = roll(damage) + roll(damage) + ...
-  crit_multiplier?: string;
+  critMultiplier?: string;
 }
 
 export interface AttackModifier {
   name?: string;
-  attack_bonus?: string;
-  damage_bonus?: string;
+  attackBonus?: string;
+  damageBonus?: string;
   // This "overrides" the damage bonus on critical hit ("not" adding to it).
   // If this is empty, the default value is:
   //    dice_of(damage_bonus) + crit_multiplier * const_of(damage_bonus)
-  damage_bonus_on_crit?: string;
+  damageBonusOnCrit?: string;
 }

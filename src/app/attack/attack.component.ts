@@ -35,11 +35,11 @@ export class AttackComponent implements OnInit {
       damage: new FormControl(
         this.attack.damage,
         [DiceExprValidator()]),
-      crit_threshold: new FormControl(
-        this.attack.crit_threshold,
+      critThreshold: new FormControl(
+        this.attack.critThreshold,
         [Validators.min(1), Validators.max(20)]),
-      crit_multiplier: new FormControl(
-        this.attack.crit_multiplier,
+      critMultiplier: new FormControl(
+        this.attack.critMultiplier,
         [Validators.min(1)]),
     });
 

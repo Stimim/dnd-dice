@@ -1,7 +1,8 @@
 <app-attack
   *ngFor="let attack of attacks"
   [attack]="attack"
-  (deleteRequest)="deleteAttack($event)" >
+  (deleteRequest)="deleteAttack($event)"
+  (rollRequest)="rollAttack($event)" >
 </app-attack>
 
 <button mat-fab
