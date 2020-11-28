@@ -5,10 +5,10 @@
         <b>{{result.attackMessage}}</b>
       </mat-panel-title>
       <mat-panel-title *ngIf="!result.attackMessage">
-        Attack: {{result.attackTotal}}({{result.attackRoll}})
+        Atk: {{result.attackTotal}}({{result.attackRoll}})
       </mat-panel-title>
       <mat-panel-description>
-        Damage: {{result.damageTotal}} = {{result.damageEvalResult | json}}
+        Damage: {{result.damageTotal}}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <ul>
