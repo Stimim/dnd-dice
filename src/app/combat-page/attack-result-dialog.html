@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Attack Result</h1>
+  <mat-expansion-panel *ngFor="let result of this.data">
+    <mat-expansion-panel-header>
+      <mat-panel-title *ngIf="result.attackMessage">
+        <b>{{result.attackMessage}}</b>
+      </mat-panel-title>
+      <mat-panel-title *ngIf="!result.attackMessage">
+        Attack: {{result.attackTotal}}({{result.attackRoll}})
+      </mat-panel-title>
+      <mat-panel-description>
+        Damage: {{result.damageTotal}} = {{result.damageEvalResult | json}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Attack Roll: {{result.attackTotal}} = {{result.attackRoll | json}}</li>
+      <li>Damage Roll: {{result.damageTotal}} = {{result.damageEvalResult | json}}</li>
+    </ul>
+  </mat-expansion-panel>
