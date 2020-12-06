@@ -1,0 +1,19 @@
+.profile-content {
+  font-family: monospace;
+  width: min(60em, 100%);
+  height: 25em;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mat-card-actions button + button {
+  margin-left: 2px;
+}
+
+.mat-card-footer .error-message {
+  color: red;
+  text-align: center;
+}

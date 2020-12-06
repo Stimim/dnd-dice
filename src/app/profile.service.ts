@@ -14,7 +14,6 @@ export class ProfileService {
   activeProfile: Profile;
 
   constructor() {
-
     this.activeProfile = this._loadDefaultProfile();
   }
 

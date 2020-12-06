@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { ProfileService } from '../profile.service';
 import { Profile } from '../data-type/profile';
+
+import { ImportProfileDialogComponent } from '../import-profile-dialog/import-profile-dialog.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -12,7 +15,7 @@ export class ProfilePageComponent implements OnInit {
 
   activeProfile!: Profile;
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.activeProfile = this.profileService.getActiveProfile();
@@ -23,5 +26,21 @@ export class ProfilePageComponent implements OnInit {
       this.activeProfile.id = profileId;
     }
     this.profileService.saveActiveProfile();
+  }
+
+  importProfile() {
+    const dialogRef = this.dialog.open(ImportProfileDialogComponent, {
+      width: '80%',
+      // height: '30em',
+    });
+
+    dialogRef.afterClosed().subscribe(
+      result => {
+        if (result) {
+          this.activeProfile = result;
+          this.profileService.activeProfile = result;
+        }
+      }
+    );
   }
 }

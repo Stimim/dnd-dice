@@ -26,6 +26,7 @@ import { AttackModifierComponent } from './attack-modifier/attack-modifier.compo
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { DicePageComponent } from './dice-page/dice-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ImportProfileDialogComponent } from './import-profile-dialog/import-profile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     DicePageComponent,
     ProfilePageComponent,
     SkillsPageComponent,
+    ImportProfileDialogComponent,
   ],
   imports: [
     BrowserModule,
