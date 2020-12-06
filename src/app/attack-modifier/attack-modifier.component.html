@@ -1,1 +1,69 @@
-<p>attack-modifier works!</p>
+<form [formGroup]="attackModifierForm">
+  <mat-expansion-panel
+    class="attack-modifier-component"
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>
+          <mat-checkbox
+            class="attack-modifier-checkbox"
+            formControlName="enabled"
+            (click)="onCheckboxClicked($event)"
+            [disableRipple]="true"
+            >
+            {{this.makeTitle()}}
+          </mat-checkbox>
+        </span>
+      </mat-panel-title>
+      <mat-panel-description *ngIf="!panelOpenState" >
+        <button mat-icon-button
+                color="warn"
+                (click)="onDeleteClicked($event)" >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-action-row>
+      <button mat-icon-button
+              color="warn"
+              (click)="onDeleteClicked($event)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-action-row>
+
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput
+               placeholder="NoName"
+               formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Attack Bonus</mat-label>
+        <input matInput
+               placeholder="+0"
+               formControlName="attackBonus" />
+      </mat-form-field>
+    </div>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Damage Bonus</mat-label>
+        <input matInput
+               placeholder="1d4"
+               formControlName="damageBonus" />
+      </mat-form-field>
+    </div>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Damage Bonus On Crit.</mat-label>
+        <input matInput
+               placeholder="1d4"
+               formControlName="damageBonusOnCrit" />
+      </mat-form-field>
+    </div>
+  </mat-expansion-panel>
+</form>

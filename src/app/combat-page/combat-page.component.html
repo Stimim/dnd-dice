@@ -1,9 +1,29 @@
-<app-attack
-  *ngFor="let attack of attacks"
-  [attack]="attack"
-  (deleteRequest)="deleteAttack($event)"
-  (rollRequest)="rollAttack($event)" >
-</app-attack>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Attacks</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-attack
+      *ngFor="let attack of attacks"
+      [attack]="attack"
+      (deleteRequest)="deleteAttack($event)"
+      (rollRequest)="rollAttack($event)" >
+    </app-attack>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Attack Modifiers</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-attack-modifier
+      *ngFor="let attackModifier of attackModifiers"
+      [attackModifier]="attackModifier"
+      (deleteRequest)="deleteAttackModifier($event)" >
+    </app-attack-modifier>
+  </mat-card-content>
+</mat-card>
 
 <button mat-fab
         class="button-add"
@@ -13,5 +33,9 @@
 </button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="addAttack()" >Attack</button>
-  <button mat-menu-item>Modifier</button>
+  <button mat-menu-item (click)="addAttackModifier()">Modifier</button>
+  <button mat-menu-item
+          (click)="showAttackResultDialog()"
+          [disabled]="this.lastAttackResultList.length == 0"
+    >Last Result</button>
 </mat-menu>

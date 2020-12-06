@@ -16,6 +16,8 @@ export interface Attack {
 }
 
 export interface AttackModifier {
+  id: number;
+  enabled?: boolean;
   name?: string;
   attackBonus?: string;
   damageBonus?: string;

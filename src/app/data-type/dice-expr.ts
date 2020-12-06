@@ -117,8 +117,15 @@ export function diceExprMakeDice(x : number, y : number) {
   return expr;
 }
 
-export function parse(expr : string) {
-  return parseDiceExpr(expr);
+export function parse(expr : string) : Expr {
+  const result = parseDiceExpr(expr);
+  if (result instanceof Expr) {
+    return result;
+  }
+
+  const e = new Expr();
+  e.constant = result;
+  return e;
 }
 
 declare global {

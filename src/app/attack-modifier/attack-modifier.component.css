@@ -1,0 +1,29 @@
+.attack-modifier-component {
+}
+
+.attack-modifier-component .attack-modifier-checkbox {
+}
+
+.attack-modifier-component .mat-expansion-panel-header-title {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.attack-modifier-component .mat-expansion-panel-header-description {
+  flex: 1;
+  display: flex;
+}
+
+.attack-modifier-component .mat-form-field {
+  flex: 1;
+}
+
+.attack-modifier-component .mat-form-field + .mat-form-field {
+  padding-left: 2px;
+}
+
+.attack-modifier-component .fields {
+  display: flex;
+}

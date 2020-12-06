@@ -27,38 +27,48 @@
       </div>
   </mat-action-row>
   <form [formGroup]="attackForm">
-    <mat-form-field style="width: 100%;" appearance="outline">
-      <mat-label>Attack Name</mat-label>
-      <input matInput
-             placeholder="NoName"
-             formControlName="name" />
-    </mat-form-field><br>
-    <mat-form-field style="width: 100%;" appearance="outline">
-      <mat-label>Attack Bonus</mat-label>
-      <input matInput
-             placeholder="+0"
-             formControlName="attack" />
-    </mat-form-field><br>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Attack Name</mat-label>
+        <input matInput
+               placeholder="NoName"
+               formControlName="name" />
+      </mat-form-field>
+    </div>
 
-    <mat-form-field style="width: 100%;" appearance="outline">
-      <mat-label>Damage</mat-label>
-      <input matInput
-             placeholder="1d4"
-             formControlName="damage" />
-    </mat-form-field><br>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Attack Bonus</mat-label>
+        <input matInput
+               placeholder="+0"
+               formControlName="attack" />
+      </mat-form-field>
+    </div>
 
-    <mat-form-field style="width: 48%;" appearance="outline">
-      <mat-label>Crit. Threshold</mat-label>
-      <input matInput
-             class="form-control"
-             placeholder="20"
-             formControlName="critThreshold" />
-    </mat-form-field>
-    <mat-form-field style="width: 48%;" appearance="outline">
-      <mat-label>Crit. Multiplier</mat-label>
-      <input matInput
-             placeholder="2"
-             formControlName="critMultiplier" />
-    </mat-form-field><br>
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Damage</mat-label>
+        <input matInput
+               placeholder="1d4"
+               formControlName="damage" />
+      </mat-form-field>
+    </div>
+
+    <div class="fields">
+      <mat-form-field appearance="outline">
+        <mat-label>Crit. Threshold</mat-label>
+        <input matInput
+               class="form-control"
+               placeholder="20"
+               formControlName="critThreshold" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Crit. Multiplier</mat-label>
+        <input matInput
+               placeholder="2"
+               formControlName="critMultiplier" />
+      </mat-form-field>
+    </div>
   </form>
 </mat-expansion-panel>

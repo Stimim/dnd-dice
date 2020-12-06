@@ -2,11 +2,25 @@
 }
 
 .attack-component .mat-expansion-panel-header-title {
+  flex: 2;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
+.attack-component .mat-expansion-panel-header-description {
+  flex: 1;
+  display: flex;
+}
+
+.attack-component .mat-form-field {
+  flex: 1;
+}
+
 .attack-component .mat-form-field + .mat-form-field {
-  margin-left: min(8px, 1vw);
+  padding-left: 2px;
+}
+
+.attack-component .fields {
+  display: flex;
 }
