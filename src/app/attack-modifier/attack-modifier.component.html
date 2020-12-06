@@ -33,31 +33,33 @@
       </button>
     </mat-action-row>
 
-    <div class="fields">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput
-               placeholder="NoName"
-               formControlName="name" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Attack Bonus</mat-label>
-        <input matInput
-               placeholder="+0"
-               formControlName="attackBonus" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Damage Bonus</mat-label>
-        <input matInput
-               placeholder="1d4"
-               formControlName="damageBonus" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Damage Bonus On Crit.</mat-label>
-        <input matInput
-               placeholder="1d4"
-               formControlName="damageBonusOnCrit" />
-      </mat-form-field>
-    </div>
+    <ng-template matExpansionPanelContent>
+      <div class="fields">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput
+                 placeholder="NoName"
+                 formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Attack Bonus</mat-label>
+          <input matInput
+                 placeholder="+0"
+                 formControlName="attackBonus" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Damage Bonus</mat-label>
+          <input matInput
+                 placeholder="1d4"
+                 formControlName="damageBonus" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Damage Bonus On Crit.</mat-label>
+          <input matInput
+                 placeholder="1d4"
+                 formControlName="damageBonusOnCrit" />
+        </mat-form-field>
+      </div>
+    </ng-template>
   </mat-expansion-panel>
 </form>

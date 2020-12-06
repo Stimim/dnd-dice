@@ -15,8 +15,8 @@
           <mat-icon>delete</mat-icon>
         </button>
       </mat-panel-description>
-
     </mat-expansion-panel-header>
+
     <mat-action-row>
       <div class="button-row">
         <button mat-icon-button (click)="onDiceClicked($event)" color="primary">
@@ -28,38 +28,40 @@
       </div>
     </mat-action-row>
 
-    <div class="fields">
-      <mat-form-field appearance="outline">
-        <mat-label>Attack Name</mat-label>
-        <input matInput
-               placeholder="NoName"
-               formControlName="name" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Attack Bonus</mat-label>
-        <input matInput
-               placeholder="+0"
-               formControlName="attack" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Damage</mat-label>
-        <input matInput
-               placeholder="1d4"
-               formControlName="damage" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Crit. Threshold</mat-label>
-        <input matInput
-               class="form-control"
-               placeholder="20"
-               formControlName="critThreshold" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Crit. Multiplier</mat-label>
-        <input matInput
-               placeholder="2"
-               formControlName="critMultiplier" />
-      </mat-form-field>
-    </div>
+    <ng-template matExpansionPanelContent>
+      <div class="fields">
+        <mat-form-field appearance="outline">
+          <mat-label>Attack Name</mat-label>
+          <input matInput
+                 placeholder="NoName"
+                 formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Attack Bonus</mat-label>
+          <input matInput
+                 placeholder="+0"
+                 formControlName="attack" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Damage</mat-label>
+          <input matInput
+                 placeholder="1d4"
+                 formControlName="damage" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Crit. Threshold</mat-label>
+          <input matInput
+                 class="form-control"
+                 placeholder="20"
+                 formControlName="critThreshold" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Crit. Multiplier</mat-label>
+          <input matInput
+                 placeholder="2"
+                 formControlName="critMultiplier" />
+        </mat-form-field>
+      </div>
+    </ng-template>
   </mat-expansion-panel>
 </form>
