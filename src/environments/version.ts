@@ -1,7 +1,7 @@
 // THIS FILE IS AUTO GENERATED, DO NOT CHANGE IT
 // USE "npm version <major | minor | patch>" INSTEAD
 export const VERSION = {
-  version: "0.0.4",
-  commit: "77db2af0da6484ce3f4f5c88a008efcbf1dba1b2",
-  timestamp: 1606581052954,
+  version: "0.0.5",
+  commit: "879037b994677e8b89c8e4b0a92391930e1df8c9",
+  timestamp: 1607260100713,
 };
