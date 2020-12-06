@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import * as StoreModule from 'store2';
 
 import { Profile } from './data-type/profile';
@@ -12,6 +12,8 @@ const META_STORE = StoreModule.namespace('meta');
 })
 export class ProfileService {
   activeProfile: Profile;
+
+  profileChanged = new EventEmitter<Profile>();
 
   constructor() {
     this.activeProfile = this._loadDefaultProfile();
@@ -46,9 +48,21 @@ export class ProfileService {
     };
   }
 
+  loadProfile(id: string) {
+    if (PROFILE_STORE.has(id)) {
+      const loaded = PROFILE_STORE.get(id);
+      this.activeProfile = loaded;
+      this.profileChanged.emit(loaded);
+    }
+  }
+
   saveActiveProfile() {
     const id = this.activeProfile.id || this._generateId();
     PROFILE_STORE.set(id, this.activeProfile);
     META_STORE.set(KEY_ACTIVE_ID, id);
+  }
+
+  getAllProfileIds() : string[] {
+    return PROFILE_STORE.keys();
   }
 }

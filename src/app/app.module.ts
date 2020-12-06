@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,7 @@ import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { DicePageComponent } from './dice-page/dice-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ImportProfileDialogComponent } from './import-profile-dialog/import-profile-dialog.component';
+import { LoadProfileDialogComponent } from './load-profile-dialog/load-profile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ImportProfileDialogComponent } from './import-profile-dialog/import-pro
     ProfilePageComponent,
     SkillsPageComponent,
     ImportProfileDialogComponent,
+    LoadProfileDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { ImportProfileDialogComponent } from './import-profile-dialog/import-pro
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatTableModule,
     MatToolbarModule,
     MatTooltipModule,
     ReactiveFormsModule,

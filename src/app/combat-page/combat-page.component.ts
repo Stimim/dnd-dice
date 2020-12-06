@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 
 import { ProfileService } from '../profile.service';
 import { Attack, AttackModifier } from '../data-type/attack';
+import { Profile } from '../data-type/profile';
 import * as DiceExprModule from '../data-type/dice-expr';
 
 export interface AttackResultDialogData {
@@ -29,7 +30,15 @@ export class CombatPageComponent implements OnInit {
 
   lastAttackResultList: AttackResult[] = [];
 
-  constructor(private profileService: ProfileService, public dialog: MatDialog) { }
+  constructor(
+    private profileService: ProfileService,
+    public dialog: MatDialog) {
+    this.profileService.profileChanged.subscribe(
+      (newProfile: Profile) => {
+        this.attacks = newProfile.attacks;
+        this.attackModifiers = newProfile.attackModifiers;
+      });
+  }
 
   ngOnInit(): void {
     const profile = this.profileService.getActiveProfile();

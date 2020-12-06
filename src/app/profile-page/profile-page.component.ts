@@ -5,6 +5,7 @@ import { ProfileService } from '../profile.service';
 import { Profile } from '../data-type/profile';
 
 import { ImportProfileDialogComponent } from '../import-profile-dialog/import-profile-dialog.component';
+import { LoadProfileDialogComponent } from '../load-profile-dialog/load-profile-dialog.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -15,7 +16,15 @@ export class ProfilePageComponent implements OnInit {
 
   activeProfile!: Profile;
 
-  constructor(private profileService: ProfileService, private dialog: MatDialog) { }
+  constructor(
+    private profileService: ProfileService,
+    private dialog: MatDialog) {
+    this.profileService.profileChanged.subscribe(
+      (newProfile: Profile) => {
+        this.activeProfile = newProfile;
+      }
+    );
+  }
 
   ngOnInit(): void {
     this.activeProfile = this.profileService.getActiveProfile();
@@ -42,5 +51,19 @@ export class ProfilePageComponent implements OnInit {
         }
       }
     );
+  }
+
+  loadProfile() {
+    const profileIds = this.profileService.getAllProfileIds();
+
+    const dialogRef = this.dialog.open(
+      LoadProfileDialogComponent, {
+        data: profileIds,
+      });
+
+    dialogRef.afterClosed().subscribe(
+      (result) => {
+        this.profileService.loadProfile(result);
+      });
   }
 }

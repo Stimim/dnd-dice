@@ -1,19 +1,17 @@
 .profile-content {
-  font-family: monospace;
-  width: min(60em, 100%);
+  width: 100%;
   height: 25em;
 }
 
-.mat-card-actions {
-  display: flex;
-  justify-content: flex-end;
+.profile-content textarea {
+  font-family: monospace;
 }
 
-.mat-card-actions button + button {
-  margin-left: 2px;
+.mat-dialog-content {
+  text-align: center;
 }
 
-.mat-card-footer .error-message {
+.error-message {
   color: red;
   text-align: center;
 }
