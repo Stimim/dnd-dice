@@ -1,22 +1,23 @@
-<mat-expansion-panel
-  class="attack-component"
-  (opened)="panelOpenState = true"
-  (closed)="panelOpenState = false" >
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      {{attack.name || "NoName"}}
-    </mat-panel-title>
-    <mat-panel-description *ngIf="!panelOpenState" >
+<form [formGroup]="attackForm">
+  <mat-expansion-panel
+    class="attack-component"
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{attack.name || "NoName"}}
+      </mat-panel-title>
+      <mat-panel-description *ngIf="!panelOpenState" >
         <button mat-icon-button (click)="onDiceClicked($event)" color="primary">
           <mat-icon>casino</mat-icon>
         </button>
         <button mat-icon-button (click)="onDeleteClicked($event)" color="warn">
           <mat-icon>delete</mat-icon>
         </button>
-    </mat-panel-description>
+      </mat-panel-description>
 
-  </mat-expansion-panel-header>
-  <mat-action-row>
+    </mat-expansion-panel-header>
+    <mat-action-row>
       <div class="button-row">
         <button mat-icon-button (click)="onDiceClicked($event)" color="primary">
           <mat-icon>casino</mat-icon>
@@ -25,8 +26,8 @@
           <mat-icon>delete</mat-icon>
         </button>
       </div>
-  </mat-action-row>
-  <form [formGroup]="attackForm">
+    </mat-action-row>
+
     <div class="fields">
       <mat-form-field appearance="outline">
         <mat-label>Attack Name</mat-label>
@@ -34,27 +35,18 @@
                placeholder="NoName"
                formControlName="name" />
       </mat-form-field>
-    </div>
-
-    <div class="fields">
       <mat-form-field appearance="outline">
         <mat-label>Attack Bonus</mat-label>
         <input matInput
                placeholder="+0"
                formControlName="attack" />
       </mat-form-field>
-    </div>
-
-    <div class="fields">
       <mat-form-field appearance="outline">
         <mat-label>Damage</mat-label>
         <input matInput
                placeholder="1d4"
                formControlName="damage" />
       </mat-form-field>
-    </div>
-
-    <div class="fields">
       <mat-form-field appearance="outline">
         <mat-label>Crit. Threshold</mat-label>
         <input matInput
@@ -62,7 +54,6 @@
                placeholder="20"
                formControlName="critThreshold" />
       </mat-form-field>
-
       <mat-form-field appearance="outline">
         <mat-label>Crit. Multiplier</mat-label>
         <input matInput
@@ -70,5 +61,5 @@
                formControlName="critMultiplier" />
       </mat-form-field>
     </div>
-  </form>
-</mat-expansion-panel>
+  </mat-expansion-panel>
+</form>

@@ -23,4 +23,5 @@
 
 .attack-component .fields {
   display: flex;
+  flex-wrap: wrap;
 }

@@ -26,4 +26,5 @@
 
 .attack-modifier-component .fields {
   display: flex;
+  flex-wrap: wrap;
 }
