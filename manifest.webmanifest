@@ -1,0 +1,29 @@
+{
+  "name": "dnd-dice",
+  "short_name": "dnd-dice",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-d20.svg",
+      "sizes": "any",
+      "type": "image/svg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-d20-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-d20-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
