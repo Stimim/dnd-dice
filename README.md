@@ -1,6 +1,11 @@
 # DndDice
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+* [Prod Server](https://dnd-dice.stimim.tw)
+  - Hosted by [Github Pages](https://pages.github.com/).
+* [Staging Server](https://dnd-dice-staging.netlify.app/)
+  - [![Netlify Status](https://api.netlify.com/api/v1/badges/ce317b30-b1dc-4348-a61c-04a808cf1b25/deploy-status)](https://app.netlify.com/sites/dnd-dice-staging/deploys)
+
 ## Environment Setup
 ```
 npm install -g @angular/cli typescript
