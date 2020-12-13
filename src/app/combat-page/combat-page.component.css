@@ -3,3 +3,11 @@
   right: 1em;
   bottom: 1em;
 }
+
+.quick-modifier {
+  text-align: center;
+}
+
+.quick-modifier .mat-form-field + .mat-form-field {
+  padding-left: 2px;
+}

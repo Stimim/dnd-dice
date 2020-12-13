@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ProfileService } from '../profile.service';
 import { Attack, AttackModifier } from '../data-type/attack';
@@ -18,6 +19,11 @@ interface AttackResult {
   damageTotal: number;
 };
 
+interface QuickModifier {
+  attackBonus: number;
+  damageBonus: number;
+};
+
 @Component({
   selector: 'app-combat-page',
   templateUrl: './combat-page.component.html',
@@ -27,8 +33,14 @@ export class CombatPageComponent implements OnInit {
 
   attacks!: Attack[];
   attackModifiers!: AttackModifier[];
-
   lastAttackResultList: AttackResult[] = [];
+
+  quickModifier: QuickModifier = {
+    attackBonus: 0,
+    damageBonus: 0,
+  };
+
+  quickModifierForm!: FormGroup;
 
   constructor(
     private profileService: ProfileService,
@@ -44,6 +56,19 @@ export class CombatPageComponent implements OnInit {
     const profile = this.profileService.getActiveProfile();
     this.attacks = profile.attacks;
     this.attackModifiers = profile.attackModifiers;
+
+    this.quickModifierForm = new FormGroup({
+      attackBonus: new FormControl(
+        this.quickModifier.attackBonus),
+      damageBonus: new FormControl(
+        this.quickModifier.damageBonus),
+    });
+    const model: any = this.quickModifier;
+    for (const key of Object.keys(this.quickModifierForm.controls)) {
+      this.quickModifierForm.controls[key].valueChanges.subscribe(
+        (v) => {model[key] = v;}
+      );
+    }
   }
 
   rollDamage(attack: Attack, isCriticalHit: boolean, modifiers: AttackModifier[]) {
@@ -98,6 +123,14 @@ export class CombatPageComponent implements OnInit {
       if (modifier.damageBonus || modifier.damageBonusOnCrit) {
         damageModifiers.push(modifier);
       }
+    }
+
+    if (this.quickModifier.attackBonus !== 0 || this.quickModifier.damageBonus !== 0) {
+      totalModAttackBonus += this.quickModifier.attackBonus;
+      damageModifiers.push({
+        id: -1,
+        damageBonus: this.quickModifier.damageBonus.toString(),
+      });
     }
     return {totalModAttackBonus, damageModifiers};
   }

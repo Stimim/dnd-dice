@@ -17,6 +17,17 @@
     <mat-card-title>Attack Modifiers</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <form class='quick-modifier' [formGroup]="quickModifierForm">
+      Quick Modifiers:
+      <mat-form-field appearance="outline">
+        <mat-label>Attack Bonus</mat-label>
+        <input matInput formControlName="attackBonus" type="number" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Damage Bonus</mat-label>
+        <input matInput formControlName="damageBonus" type="number" />
+      </mat-form-field>
+    </form>
     <app-attack-modifier
       *ngFor="let attackModifier of attackModifiers"
       [attackModifier]="attackModifier"
