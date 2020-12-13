@@ -59,7 +59,7 @@ export class Expr {
       }
       this.constant -= x.constant;
     } else {
-      this.constant += x;
+      this.constant -= x;
     }
   }
 
@@ -74,7 +74,7 @@ export class Expr {
     if (this.constant > 0) {
       result += `+${this.constant}`;
     } else if (this.constant < 0) {
-      result += `-${this.constant}`;
+      result += `${this.constant}`;
     }
 
     if (result[0] == '+') {
