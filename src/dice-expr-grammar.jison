@@ -18,7 +18,7 @@
 %left '+' '-'
 %left 'd'
 %left UDICE
-%left UMINUS
+%left UMINUS UPLUS
 
 %start expressions
 
@@ -38,6 +38,8 @@ e
     { $$ = diceExprMakeDice(Number($1), Number($3)); }
   | '-' e %prec UMINUS
     { $$ = diceExprSub(0, $2); }
+  | '+' e %prec UPLUS
+    { $$ = diceExprAdd(0, $2); }
   | 'd' e %prec UDICE
     { $$ = diceExprMakeDice(1, Number($2)); }
   | NUMBER
