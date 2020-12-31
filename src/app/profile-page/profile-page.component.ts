@@ -5,7 +5,7 @@ import { ProfileService } from '../profile.service';
 import { Profile } from '../data-type/profile';
 
 import { ImportProfileDialogComponent } from '../import-profile-dialog/import-profile-dialog.component';
-import { LoadProfileDialogComponent } from '../load-profile-dialog/load-profile-dialog.component';
+import { SelectProfileDialogComponent } from '../select-profile-dialog/select-profile-dialog.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -57,7 +57,7 @@ export class ProfilePageComponent implements OnInit {
     const profileIds = this.profileService.getAllProfileIds();
 
     const dialogRef = this.dialog.open(
-      LoadProfileDialogComponent, {
+      SelectProfileDialogComponent, {
         data: profileIds,
       });
 

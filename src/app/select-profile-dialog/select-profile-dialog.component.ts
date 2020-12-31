@@ -7,11 +7,11 @@ interface Element {
 };
 
 @Component({
-  selector: 'app-load-profile-dialog',
-  templateUrl: './load-profile-dialog.component.html',
-  styleUrls: ['./load-profile-dialog.component.css']
+  selector: 'app-select-profile-dialog',
+  templateUrl: './select-profile-dialog.component.html',
+  styleUrls: ['./select-profile-dialog.component.css']
 })
-export class LoadProfileDialogComponent implements OnInit {
+export class SelectProfileDialogComponent implements OnInit {
 
   profileIds: string[];
 
@@ -19,7 +19,7 @@ export class LoadProfileDialogComponent implements OnInit {
   displayedColumns = [ 'name' ];
 
   constructor(
-    private dialogRef: MatDialogRef<LoadProfileDialogComponent>,
+    private dialogRef: MatDialogRef<SelectProfileDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.profileIds = data;
 

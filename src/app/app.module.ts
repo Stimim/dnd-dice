@@ -28,7 +28,7 @@ import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { DicePageComponent } from './dice-page/dice-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ImportProfileDialogComponent } from './import-profile-dialog/import-profile-dialog.component';
-import { LoadProfileDialogComponent } from './load-profile-dialog/load-profile-dialog.component';
+import { SelectProfileDialogComponent } from './select-profile-dialog/select-profile-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { LoadProfileDialogComponent } from './load-profile-dialog/load-profile-d
     ProfilePageComponent,
     SkillsPageComponent,
     ImportProfileDialogComponent,
-    LoadProfileDialogComponent,
+    SelectProfileDialogComponent,
   ],
   imports: [
     BrowserModule,
