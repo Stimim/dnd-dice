@@ -54,31 +54,27 @@ export class ProfilePageComponent implements OnInit {
   }
 
   loadProfile() {
-    const profileIds = this.profileService.getAllProfileIds();
-
-    const dialogRef = this.dialog.open(
-      SelectProfileDialogComponent, {
-        data: profileIds,
-      });
-
-    dialogRef.afterClosed().subscribe(
-      (result) => {
-        this.profileService.loadProfile(result);
-      });
+    this._selectProfile().then( (result) => {
+      this.profileService.loadProfile(result);
+    });
   }
 
   deleteProfile() {
-    const profileIds = this.profileService.getAllProfileIds();
+    this._selectProfile().then( (result) => {
+      this.profileService.deleteProfile(result);
+    });
+  }
 
-    const dialogRef = this.dialog.open(
-      SelectProfileDialogComponent, {
-        data: profileIds,
-      });
+  _selectProfile() {
+    return new Promise<string>( (resolve) => {
+      const profileIds = this.profileService.getAllProfileIds();
 
-    dialogRef.afterClosed().subscribe(
-      (result) => {
-        this.profileService.deleteProfile(result);
-      });
+      const dialogRef = this.dialog.open(
+        SelectProfileDialogComponent, {
+          data: profileIds,
+        });
 
+        dialogRef.afterClosed().subscribe(result => resolve(result));
+    });
   }
 }
