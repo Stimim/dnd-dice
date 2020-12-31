@@ -56,6 +56,10 @@ export class ProfileService {
     }
   }
 
+  deleteProfile(id: string) {
+    PROFILE_STORE.remove(id);
+  }
+
   saveActiveProfile() {
     const id = this.activeProfile.id || this._generateId();
     PROFILE_STORE.set(id, this.activeProfile);

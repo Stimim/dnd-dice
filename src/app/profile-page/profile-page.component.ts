@@ -66,4 +66,19 @@ export class ProfilePageComponent implements OnInit {
         this.profileService.loadProfile(result);
       });
   }
+
+  deleteProfile() {
+    const profileIds = this.profileService.getAllProfileIds();
+
+    const dialogRef = this.dialog.open(
+      SelectProfileDialogComponent, {
+        data: profileIds,
+      });
+
+    dialogRef.afterClosed().subscribe(
+      (result) => {
+        this.profileService.deleteProfile(result);
+      });
+
+  }
 }
