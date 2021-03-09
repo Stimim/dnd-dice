@@ -8,6 +8,6 @@
   text-align: center;
 }
 
-.quick-modifier .mat-form-field + .mat-form-field {
-  padding-left: 2px;
+.quick-modifier .mat-form-field {
+  width: 8em;
 }

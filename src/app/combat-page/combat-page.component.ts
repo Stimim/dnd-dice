@@ -221,6 +221,10 @@ export class CombatPageComponent implements OnInit {
       this.attackModifiers.splice(idx, 1);
     }
   }
+
+  changeQuickModifier(key: 'attackBonus' | 'damageBonus', delta: number) {
+    this.quickModifier[key] += delta;
+  }
 }
 
 @Component({

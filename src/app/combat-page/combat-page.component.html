@@ -17,17 +17,36 @@
     <mat-card-title>Attack Modifiers</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class='quick-modifier' [formGroup]="quickModifierForm">
-      Quick Modifiers:
-      <mat-form-field appearance="outline">
+    <div class="quick-modifier">
+      <button mat-icon-button (click)="changeQuickModifier('attackBonus', -1)" >
+        <mat-icon>
+          remove_circle
+        </mat-icon>
+      </button>
+      <mat-form-field appearance="outline" >
         <mat-label>Attack Bonus</mat-label>
-        <input matInput formControlName="attackBonus" type="number" />
+        <input matInput value={{quickModifier.attackBonus}} type="number" readonly />
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <button mat-icon-button (click)="changeQuickModifier('attackBonus', +1)" >
+        <mat-icon>
+          add_circle
+        </mat-icon>
+      </button>
+      <button mat-icon-button (click)="changeQuickModifier('damageBonus', -1)" >
+        <mat-icon>
+          remove_circle
+        </mat-icon>
+      </button>
+      <mat-form-field appearance="outline" >
         <mat-label>Damage Bonus</mat-label>
-        <input matInput formControlName="damageBonus" type="number" />
+        <input matInput value={{quickModifier.damageBonus}} type="number" readonly />
       </mat-form-field>
-    </form>
+      <button mat-icon-button (click)="changeQuickModifier('damageBonus', +1)" >
+        <mat-icon>
+          add_circle
+        </mat-icon>
+      </button>
+    </div>
     <app-attack-modifier
       *ngFor="let attackModifier of attackModifiers"
       [attackModifier]="attackModifier"
